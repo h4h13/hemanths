@@ -9,9 +9,9 @@ class RetroMusic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const textStyle = TextStyle(
-      height: 2,
-      letterSpacing: 1.1,
-      wordSpacing: 3,
+      height: 1.5,
+      letterSpacing: 1.01,
+      wordSpacing: 2,
     );
     final size = MediaQuery.of(context).size;
     return Scaffold(
@@ -237,36 +237,52 @@ class RetroMusic extends StatelessWidget {
     TextStyle textStyle,
   ) {
     return Container(
-      color: Theme.of(context).primaryColor,
+      color: Colors.deepPurpleAccent,
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 42,
-          horizontal: 156,
+        padding: const EdgeInsets.only(
+          left: 114,
+          top: 42,
+          bottom: 42,
+          right: 156,
         ),
-        child: Hero(
-          tag: "Card",
-          child: Card(
-            clipBehavior: Clip.antiAliasWithSaveLayer,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Card(
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Icon(Icons.arrow_back),
+                  ),
+                ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+              ),
             ),
-            elevation: 24,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Expanded(
-                  child: Stack(
+            Expanded(
+              child: Hero(
+                tag: "Card",
+                child: Card(
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  elevation: 24,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      SingleChildScrollView(
-                        child: Container(
+                      Expanded(
+                        child: SingleChildScrollView(
                           child: Padding(
-                            padding: const EdgeInsets.only(
-                              top: 96,
-                              left: 42,
-                              right: 42,
-                              bottom: 42,
-                            ),
+                            padding: const EdgeInsets.all(42),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               mainAxisAlignment: MainAxisAlignment.start,
@@ -290,16 +306,9 @@ class RetroMusic extends StatelessWidget {
                                     vertical: 8,
                                   ),
                                   child: Text(
-                                    "New Material Desing Music player for Android",
-                                    style: TextStyle(
-                                      fontSize: Theme.of(context)
-                                          .textTheme
-                                          .headline6
-                                          .fontSize,
-                                      height: 2,
-                                      letterSpacing: 1.1,
-                                      wordSpacing: 2,
-                                    ),
+                                    "New Material Design Music player for Android",
+                                    style:
+                                    Theme.of(context).textTheme.headline5,
                                   ),
                                 ),
                                 Padding(
@@ -328,13 +337,8 @@ class RetroMusic extends StatelessWidget {
                                           vertical: 8),
                                       child: Text(
                                         "Included Features",
-                                        style: TextStyle(
-                                          fontSize: Theme.of(context)
-                                              .textTheme
-                                              .headline6
-                                              .fontSize,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                        style:
+                                        Theme.of(context).textTheme.headline5,
                                       ),
                                     ),
                                     Text(
@@ -439,38 +443,21 @@ class RetroMusic extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Card(
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.pop(context);
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Icon(Icons.arrow_back),
+                      Expanded(
+                        child: Container(
+                          child: Center(
+                            child: Image(
+                              image: AssetImage("images/now_playing.png"),
                             ),
                           ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),
-                Expanded(
-                  child: Container(
-                    child: Center(
-                      child: Image(
-                        image: AssetImage("images/now_playing.png"),
-                      ),
-                    ),
-                  ),
-                )
-              ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hemanth_dev/pages/about_page.dart';
 import 'package:hemanth_dev/pages/landing_page.dart';
 import 'package:hemanth_dev/pages/retro_music.dart';
@@ -12,9 +13,11 @@ class BaseApp extends StatelessWidget {
     return MaterialApp(
       title: "Hemanth S",
       theme: ThemeData(
-        fontFamily: "Product Sans",
+        fontFamily: 'Product Sans',
+         primaryColor: Colors.green[200],
+         buttonTheme: ButtonThemeData(buttonColor: Colors.green[200]),
       ),
-      darkTheme: ThemeData.dark(),
+      
       routes: {
         LandingPage.routeName: (context) => LandingPage(),
         WorkPage.routeName: (context) => WorkPage(),

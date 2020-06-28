@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hemanth_dev/constants.dart';
 import 'package:hemanth_dev/pages/about_page.dart';
-import 'package:hemanth_dev/pages/retro_music.dart';
 import 'package:hemanth_dev/pages/work_page.dart';
 import 'package:hemanth_dev/util.dart';
 
@@ -194,9 +193,11 @@ buildBigScreenLayoutContainer(BuildContext context) {
   return Container(
     color: Theme.of(context).primaryColor,
     child: Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: 42.0,
-        horizontal: 156,
+      padding: const EdgeInsets.only(
+        left: 114,
+        top: 42,
+        bottom: 42,
+        right: 156,
       ),
       child: Hero(
         tag: "Card",
@@ -220,7 +221,6 @@ buildBigScreenLayoutContainer(BuildContext context) {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
                           SelectableText(
-                          
                             "Hemanth Savarala".toUpperCase(),
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -293,7 +293,7 @@ buildBigScreenLayoutContainer(BuildContext context) {
                           Row(
                             children: <Widget>[
                               MaterialButton(
-                                color: Theme.of(context).accentColor,
+                                color: Theme.of(context).primaryColor,
                                 padding: const EdgeInsets.symmetric(
                                   vertical: 16,
                                   horizontal: 42,
