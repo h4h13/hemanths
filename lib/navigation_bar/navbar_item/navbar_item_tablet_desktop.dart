@@ -7,7 +7,9 @@ class NavBarItemTabletDesktop extends ViewModelWidget<NavBarItemModel> {
   Widget build(BuildContext context, NavBarItemModel model) {
     return Text(
       model.title,
-      style: TextStyle(fontSize: 18),
+      style: Theme.of(context).textTheme.headline6.copyWith(
+            color: Colors.white,
+          ),
     );
   }
 }

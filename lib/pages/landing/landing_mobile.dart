@@ -10,16 +10,18 @@ class LandingMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    FlutterStatusbarcolor.setStatusBarColor(Colors.transparent);
-    return ResponsiveBuilder(
-      builder: (context, sizingInformation) => Scaffold(
+    return ResponsiveBuilder(builder: (context, sizingInformation) {
+      if (sizingInformation.isMobile) {
+        FlutterStatusbarcolor.setStatusBarColor(Colors.transparent);
+      }
+      return Scaffold(
         drawer: sizingInformation.isMobile ? NavigationDrawer() : null,
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("images/hemanth.jpg"),
               fit: BoxFit.cover,
-              colorFilter: new ColorFilter.mode(
+              colorFilter: ColorFilter.mode(
                 Colors.black.withOpacity(0.75),
                 BlendMode.srcATop,
               ),
@@ -38,7 +40,7 @@ class LandingMobile extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
