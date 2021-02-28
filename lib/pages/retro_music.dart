@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hemanth_dev/constants.dart';
+import 'package:hemanth_dev/styles.dart';
 import 'package:hemanth_dev/util.dart';
 
 class RetroMusic extends StatelessWidget {
@@ -289,14 +290,7 @@ class RetroMusic extends StatelessWidget {
                               children: <Widget>[
                                 Text(
                                   "Retro Music Player".toUpperCase(),
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: Theme.of(context)
-                                        .textTheme
-                                        .headline2
-                                        .fontSize,
-                                    letterSpacing: 8,
-                                  ),
+                                  style: AppTextStyle.header1Style,
                                 ),
                                 SizedBox(
                                   height: 16,
@@ -308,7 +302,7 @@ class RetroMusic extends StatelessWidget {
                                   child: Text(
                                     "New Material Design Music player for Android",
                                     style:
-                                    Theme.of(context).textTheme.headline5,
+                                        Theme.of(context).textTheme.headline5,
                                   ),
                                 ),
                                 Padding(
@@ -337,8 +331,9 @@ class RetroMusic extends StatelessWidget {
                                           vertical: 8),
                                       child: Text(
                                         "Included Features",
-                                        style:
-                                        Theme.of(context).textTheme.headline5,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .headline5,
                                       ),
                                     ),
                                     Text(

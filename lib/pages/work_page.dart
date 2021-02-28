@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hemanth_dev/pages/retro_music.dart';
+import 'package:hemanth_dev/styles.dart';
 
 class WorkPage extends StatefulWidget {
   static var routeName = "/work";
@@ -209,14 +210,7 @@ class _WorkPageState extends State<WorkPage> {
                                 children: <Widget>[
                                   Text(
                                     "Carrier".toUpperCase(),
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: Theme.of(context)
-                                          .textTheme
-                                          .headline2
-                                          .fontSize,
-                                      letterSpacing: 8,
-                                    ),
+                                    style: AppTextStyle.header1Style,
                                   ),
                                   Text(
                                     "I have more than 4 years for experience in Android development, recently I have been working on Flutter which takes very less time to develop multi-platform apps, I’m very happy to say I’m flutter developer now ",

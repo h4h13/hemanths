@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hemanth_dev/constants.dart';
+import 'package:hemanth_dev/styles.dart';
 import 'package:hemanth_dev/util.dart';
 
 class AboutPage extends StatelessWidget {
@@ -201,14 +202,7 @@ buildBigScreenLayoutContainer(BuildContext context) {
                               children: <Widget>[
                                 Text(
                                   "About".toUpperCase(),
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: Theme.of(context)
-                                        .textTheme
-                                        .headline2
-                                        .fontSize,
-                                    letterSpacing: 8,
-                                  ),
+                                  style: AppTextStyle.header1Style,
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
