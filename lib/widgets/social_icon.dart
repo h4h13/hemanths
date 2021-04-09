@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hemanth_dev/extensions/hover_extension.dart';
 
 class SocialIcon extends StatelessWidget {
   final IconData data;
@@ -25,6 +26,6 @@ class SocialIcon extends StatelessWidget {
           color: color,
         ),
       ),
-    );
+    ).mouseUpOnHOver.showCursorOnHover;
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hemanth_dev/constants/colors.dart';
 
 class CenteredView extends StatelessWidget {
   final Widget child;
@@ -10,7 +9,6 @@ class CenteredView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: kPrimaryColor,
       padding: const EdgeInsets.symmetric(
         horizontal: 70,
         vertical: 20,

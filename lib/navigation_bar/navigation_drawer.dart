@@ -23,21 +23,18 @@ class NavigationDrawer extends StatelessWidget {
             ),
             NavBarItem(
               'Projects',
-              HomeRoute,
+              ProjectRoute,
               icon: Icons.portrait_rounded,
             ),
             NavBarItem(
               'Contact',
-              HomeRoute,
+              ContactRoute,
               icon: Icons.contact_mail_rounded,
             ),
             NavBarItem(
               'About',
               AboutRoute,
               icon: Icons.info_outline_rounded,
-            ),
-            SizedBox(
-              width: 60,
             ),
           ],
         ),

@@ -8,56 +8,47 @@ class NavigationBarTablet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 70,
-        vertical: 20,
-      ),
-      child: Container(
-        height: 100,
-        color: Colors.transparent,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            NavigationBarLogo(),
-            Wrap(
-              children: [
-                NavBarItem(
-                  'Home',
-                  HomeRoute,
-                  icon: Icons.home,
-                ),
-                SizedBox(
-                  width: 60,
-                ),
-                NavBarItem(
-                  'Projects',
-                  HomeRoute,
-                  icon: Icons.home,
-                ),
-                SizedBox(
-                  width: 60,
-                ),
-                NavBarItem(
-                  'Contact',
-                  HomeRoute,
-                  icon: Icons.home,
-                ),
-                SizedBox(
-                  width: 60,
-                ),
-                NavBarItem(
-                  'About',
-                  HomeRoute,
-                  icon: Icons.home,
-                ),
-                SizedBox(
-                  width: 60,
-                ),
-              ],
-            ),
-          ],
-        ),
+    return Container(
+      height: 100,
+      color: Colors.transparent,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          NavigationBarLogo(),
+          Wrap(
+            children: [
+              NavBarItem(
+                'Home',
+                HomeRoute,
+                icon: Icons.home,
+              ),
+              SizedBox(
+                width: 30,
+              ),
+              NavBarItem(
+                'Projects',
+                ProjectRoute,
+                icon: Icons.home,
+              ),
+              SizedBox(
+                width: 30,
+              ),
+              NavBarItem(
+                'Contact',
+                ContactRoute,
+                icon: Icons.home,
+              ),
+              SizedBox(
+                width: 30,
+              ),
+              NavBarItem(
+                'About',
+                AboutRoute,
+                icon: Icons.home,
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hemanth_dev/navigation_bar/navigation_bar.dart';
-import 'package:hemanth_dev/pages/landing/components/user_details.dart';
+import 'package:hemanth_dev/views/home/components/user_details.dart';
 
-class LandingTablet extends StatelessWidget {
-  const LandingTablet({Key key}) : super(key: key);
+class HomeTablet extends StatelessWidget {
+  const HomeTablet({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,6 @@ class LandingTablet extends StatelessWidget {
           ),
           Column(
             children: [
-              NavigationBar(),
               Padding(
                 padding: const EdgeInsets.all(24.0),
                 child: UserDetails(),

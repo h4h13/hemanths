@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hemanth_dev/pages/about_page.dart';
-import 'package:hemanth_dev/pages/landing/landing_page.dart';
-import 'package:hemanth_dev/pages/retro_music.dart';
 import 'package:hemanth_dev/routing/route_name.dart';
+import 'package:hemanth_dev/views/about/about_view.dart';
+import 'package:hemanth_dev/views/home/home_view.dart';
+import 'package:hemanth_dev/views/projects/retro_music.dart';
+import 'package:hemanth_dev/views/work/work_page.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
@@ -12,6 +13,14 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return _getPageRoute(AboutPage(), settings);
     case RetroMusicRoute:
       return _getPageRoute(RetroMusic(), settings);
+    case ProjectRoute:
+      return _getPageRoute(WorkPage(), settings);
+    case ContactRoute:
+      return _getPageRoute(
+          Container(
+            color: Colors.red,
+          ),
+          settings);
     default:
       return _getPageRoute(LandingPage(), settings);
   }

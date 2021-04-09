@@ -3,10 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hemanth_dev/constants.dart';
 import 'package:hemanth_dev/styles.dart';
 import 'package:hemanth_dev/util.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 
 class RetroMusic extends StatelessWidget {
-  static var routeName = "/retro-music";
-
   @override
   Widget build(BuildContext context) {
     const textStyle = TextStyle(
@@ -14,15 +13,14 @@ class RetroMusic extends StatelessWidget {
       letterSpacing: 1.01,
       wordSpacing: 2,
     );
-    final size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: size.width <= 800
-          ? buildMobileLayoutContainer(context, textStyle)
-          : buildBigScreenLayoutContainer(context, textStyle),
+
+    return ScreenTypeLayout(
+      mobile: buildMobileLayoutContainer(context, textStyle),
+      tablet: buildBigScreenLayoutContainer(context, textStyle),
     );
   }
 
-  buildMobileLayoutContainer(
+  Widget buildMobileLayoutContainer(
     BuildContext context,
     TextStyle textStyle,
   ) {
@@ -233,7 +231,7 @@ class RetroMusic extends StatelessWidget {
     );
   }
 
-  buildBigScreenLayoutContainer(
+  Widget buildBigScreenLayoutContainer(
     BuildContext context,
     TextStyle textStyle,
   ) {

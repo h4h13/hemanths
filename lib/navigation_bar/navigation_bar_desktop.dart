@@ -27,7 +27,7 @@ class NavigationBarDesktop extends StatelessWidget {
               ),
               NavBarItem(
                 'Projects',
-                HomeRoute,
+                ProjectRoute,
                 icon: Icons.home,
               ),
               SizedBox(
@@ -35,7 +35,7 @@ class NavigationBarDesktop extends StatelessWidget {
               ),
               NavBarItem(
                 'Contact',
-                HomeRoute,
+                ContactRoute,
                 icon: Icons.home,
               ),
               SizedBox(
@@ -43,11 +43,8 @@ class NavigationBarDesktop extends StatelessWidget {
               ),
               NavBarItem(
                 'About',
-                HomeRoute,
+                AboutRoute,
                 icon: Icons.home,
-              ),
-              SizedBox(
-                width: 60,
               ),
             ],
           ),

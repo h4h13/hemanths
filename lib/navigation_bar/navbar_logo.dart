@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:hemanth_dev/extensions/hover_extension.dart';
+
 class NavigationBarLogo extends StatelessWidget {
   const NavigationBarLogo({Key key}) : super(key: key);
 
@@ -18,6 +20,6 @@ class NavigationBarLogo extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ).showCursorOnHover;
   }
 }

@@ -25,6 +25,8 @@ class NavBarItem extends StatelessWidget {
         // DON'T EVER USE A SERVICE DIRECTLY IN THE UI TO CHANGE ANY KIND OF STATE
         // SERVICES SHOULD ONLY BE USED FROM A VIEWMODEL
         locator<NavigationService>().navigateTo(navigationPath);
+        //Navigator.pushNamed(context, navigationPath);
+        print(navigationPath);
       },
       child: Provider.value(
         value: model,

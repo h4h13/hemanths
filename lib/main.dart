@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hemanth_dev/pages/about_page.dart';
-import 'package:hemanth_dev/pages/landing/landing_page.dart';
-import 'package:hemanth_dev/pages/retro_music.dart';
-import 'package:hemanth_dev/pages/work_page.dart';
+import 'package:hemanth_dev/views/template_layout/layout_template.dart';
+import 'package:hemanth_dev/locator.dart';
+import 'package:hemanth_dev/routing/route_name.dart';
+import 'package:hemanth_dev/routing/router.dart';
+import 'package:hemanth_dev/services/navigation_service.dart';
 
 Future<void> main() async {
+  setupLocator();
   runApp(BaseApp());
 }
 
@@ -14,15 +16,11 @@ class BaseApp extends StatelessWidget {
     return MaterialApp(
       title: "Hemanth S",
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: "ProductSansRegular",
-      ),
-      routes: {
-        LandingPage.routeName: (context) => LandingPage(),
-        WorkPage.routeName: (context) => WorkPage(),
-        AboutPage.routeName: (context) => AboutPage(),
-        RetroMusic.routeName: (context) => RetroMusic(),
-      },
+      theme: ThemeData(fontFamily: "Product Sans"),
+      builder: (context, child) => LayoutTemplate(child: child),
+      navigatorKey: locator<NavigationService>().navigatorKey,
+      onGenerateRoute: generateRoute,
+      initialRoute: HomeRoute,
     );
   }
 }
