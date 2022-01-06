@@ -1,0 +1,30 @@
+name: flutter_hemanth_dev
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+dependencies:
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^7.3.1
+  material_design_icons_flutter: ^5.0.6295
+  provider: ^6.0.1
+  responsive_builder: ^0.4.1
+  url_launcher: ^6.0.12
+  url_strategy: ^0.2.0
+
+dev_dependencies:
+  flutter_lints: ^1.0.0
+  flutter_test:
+    sdk: flutter
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+  fonts:
+    - family: Product Sans
+      fonts:
+        - asset: fonts/ProductSans-Regular.ttf
