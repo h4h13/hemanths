@@ -4,20 +4,6 @@ import 'package:url_strategy/url_strategy.dart';
 
 import 'constants.dart';
 import 'pages/home/home_page.dart';
-import 'pages/projects/projects_page.dart';
-import 'pages/projects/retro_music_page.dart';
-
-const telegramUrl = "https://telegram.me/h4h13";
-const email = "mailto:hemanths@live.com";
-const linkedInUtl = "https://www.linkedin.com/in/h4h13/";
-const instagramUrl = "https://www.instagram.com/h4h13/";
-const twitterUrl = "https://twitter.com/h4h13";
-const githubUrl = "https://github.com/h4h13";
-const retroMusicPlayStoreUrl =
-    "https://play.google.com/store/apps/details?id=code.name.monkey.retromusic&hl=en_IN";
-const retroMusicGithubUrl = "https://github.com/h4h13/RetroMusicPlayer";
-const retroMusicInstagramUrl = "https://www.instagram.com/retromusicapp/";
-const retroMusicTwitterUrl = "https://twitter.com/retromusicapp/";
 
 void main() {
   setPathUrlStrategy();
@@ -37,39 +23,6 @@ class MyApp extends StatelessWidget {
       darkTheme: darkTheme,
       home: const HomePage(),
     );
-  }
-}
-
-class Routes {
-  static Map<String, WidgetBuilder> routes() {
-    return <String, WidgetBuilder>{
-      AppRoutes.home.path: (BuildContext context) => const HomePage(),
-      AppRoutes.project.path: (BuildContext context) => const ProjectsPage(),
-      AppRoutes.retroMucicApp.path: (BuildContext context) =>
-          const RetroMusicPage()
-    };
-  }
-}
-
-enum AppRoutes {
-  home,
-  project,
-  retroMucicApp,
-  paiseApp,
-}
-
-extension AppRoutesExt on AppRoutes {
-  String get path {
-    switch (this) {
-      case AppRoutes.home:
-        return '/home';
-      case AppRoutes.project:
-        return '/project';
-      case AppRoutes.retroMucicApp:
-        return '/retro_music_app';
-      case AppRoutes.paiseApp:
-        return '/paisa';
-    }
   }
 }
 

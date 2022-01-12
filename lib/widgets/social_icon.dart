@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import '../main.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
+import '../constants.dart';
+import '../main.dart';
 
 class SocialIcons extends StatelessWidget {
   const SocialIcons({Key? key}) : super(key: key);
@@ -15,17 +17,17 @@ class SocialIcons extends StatelessWidget {
           SocialIcon(
             data: MdiIcons.github,
             onPressed: () => openUrl(githubUrl),
-            color: Theme.of(context).colorScheme.secondary,
+            color: Theme.of(context).colorScheme.primary,
           ),
           SocialIcon(
             data: MdiIcons.linkedin,
             onPressed: () => openUrl(linkedInUtl),
-            color: Theme.of(context).colorScheme.secondary,
+            color: Theme.of(context).colorScheme.primary,
           ),
           SocialIcon(
             data: MdiIcons.message,
             onPressed: () => openUrl(telegramUrl),
-            color: Theme.of(context).colorScheme.secondary,
+            color: Theme.of(context).colorScheme.primary,
           ),
         ],
       ),

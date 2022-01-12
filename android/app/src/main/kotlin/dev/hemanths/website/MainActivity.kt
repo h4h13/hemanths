@@ -1,4 +1,4 @@
-package dev.hemanth.website
+package dev.hemanths.website
 
 import io.flutter.embedding.android.FlutterActivity
 

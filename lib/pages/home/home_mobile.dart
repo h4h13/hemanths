@@ -2,16 +2,26 @@ import 'package:flutter/material.dart';
 
 import '../../constants.dart';
 import '../../widgets/social_icon.dart';
+import '../projects/paisa_page.dart';
+import '../projects/retro_music_page.dart';
 
-class HomeMobileLayout extends StatelessWidget {
+class HomeMobileLayout extends StatefulWidget {
   const HomeMobileLayout({Key? key}) : super(key: key);
 
   @override
+  State<HomeMobileLayout> createState() => _HomeMobileLayoutState();
+}
+
+class _HomeMobileLayoutState extends State<HomeMobileLayout> {
+  late int index = 0;
+
+  @override
   Widget build(BuildContext context) {
-    return Material(
-      child: LayoutBuilder(
+    return Scaffold(
+      body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-          return Stack(
+          return IndexedStack(
+            index: index,
             children: [
               Container(
                 width: constraints.maxWidth,
@@ -40,7 +50,7 @@ class HomeMobileLayout extends StatelessWidget {
                               .primaryTextTheme
                               .headline4
                               ?.copyWith(
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w400,
                               ),
                         ),
                       ),
@@ -53,7 +63,7 @@ class HomeMobileLayout extends StatelessWidget {
                               .primaryTextTheme
                               .headline2
                               ?.copyWith(
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w700,
                                 color: Colors.white,
                               ),
                         ),
@@ -67,7 +77,7 @@ class HomeMobileLayout extends StatelessWidget {
                               .primaryTextTheme
                               .headline5
                               ?.copyWith(
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w500,
                                 color: Colors.white.withOpacity(0.78),
                               ),
                         ),
@@ -78,9 +88,46 @@ class HomeMobileLayout extends StatelessWidget {
                   ),
                 ),
               ),
+              const PaisaPage(),
+              const RetroMusicPage(),
             ],
           );
         },
+      ),
+      bottomNavigationBar: NavigationBarTheme(
+        data: NavigationBarThemeData(
+          labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
+          labelTextStyle: MaterialStateProperty.all(
+            const TextStyle(
+              fontFamily: 'Google Sans',
+              fontSize: 14,
+            ),
+          ),
+        ),
+        child: NavigationBar(
+          selectedIndex: index,
+          onDestinationSelected: (index) {
+            this.index = index;
+            setState(() {});
+          },
+          destinations: const [
+            NavigationDestination(
+              icon: Icon(Icons.home_outlined),
+              label: 'Home',
+              selectedIcon: Icon(Icons.home),
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.category_outlined),
+              label: 'Projects',
+              selectedIcon: Icon(Icons.category),
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.person_outline),
+              label: 'About',
+              selectedIcon: Icon(Icons.person),
+            ),
+          ],
+        ),
       ),
     );
   }

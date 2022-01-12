@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import '../main.dart';
-import '../pages/home/home_page.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+
+import '../app_routes.dart';
+import '../pages/home/home_page.dart';
 
 class TabBarNavigation extends StatefulWidget {
   const TabBarNavigation({
@@ -14,18 +15,15 @@ class TabBarNavigation extends StatefulWidget {
 
 class _TabBarNavigationState extends State<TabBarNavigation> {
   int index = 0;
-  void onHighlight(AppRoutes route) {
+  void onHighlight(String route) {
     switch (route) {
-      case AppRoutes.home:
+      case home:
         changeHighlight(0);
         break;
-      case AppRoutes.project:
+      case retroMucicApp:
         changeHighlight(1);
         break;
-      case AppRoutes.retroMucicApp:
-        changeHighlight(2);
-        break;
-      case AppRoutes.paiseApp:
+      case paiseApp:
         changeHighlight(2);
         break;
     }
@@ -40,14 +38,7 @@ class _TabBarNavigationState extends State<TabBarNavigation> {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: SafeArea(
-        child: IconButton(
-          onPressed: () {
-            Scaffold.of(context).openDrawer();
-          },
-          icon: const Icon(Icons.menu_rounded),
-        ),
-      ),
+      mobile: const SizedBox.shrink(),
       tablet: SafeArea(
         child: FractionallySizedBox(
           widthFactor: 0.9,
@@ -60,19 +51,19 @@ class _TabBarNavigationState extends State<TabBarNavigation> {
                 const Spacer(),
                 _TabeItem(
                   title: 'Home',
-                  appRoute: AppRoutes.home,
+                  appRoute: home,
                   selected: index == 0,
                   onPress: onHighlight,
                 ),
                 _TabeItem(
-                  title: 'Work',
-                  appRoute: AppRoutes.project,
+                  title: 'Retro Music',
+                  appRoute: retroMucicApp,
                   selected: index == 1,
                   onPress: onHighlight,
                 ),
                 _TabeItem(
-                  title: 'About',
-                  appRoute: AppRoutes.retroMucicApp,
+                  title: 'Paisa',
+                  appRoute: paiseApp,
                   selected: index == 2,
                   onPress: onHighlight,
                 ),
@@ -96,8 +87,8 @@ class _TabeItem extends StatefulWidget {
 
   final bool selected;
   final String title;
-  final AppRoutes appRoute;
-  final Function(AppRoutes appRoute) onPress;
+  final String appRoute;
+  final Function(String appRoute) onPress;
 
   @override
   State<_TabeItem> createState() => _TabeItemState();
@@ -109,7 +100,7 @@ class _TabeItemState extends State<_TabeItem> {
     return InkWell(
       onTap: () {
         widget.onPress(widget.appRoute);
-        navigatorKey.currentState!.pushReplacementNamed(widget.appRoute.path);
+        navigatorKey.currentState!.pushNamed(widget.appRoute);
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(

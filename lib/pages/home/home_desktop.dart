@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../constants.dart';
 import '../../widgets/social_icon.dart';
 
 class HomeDesktop extends StatelessWidget {
@@ -29,29 +30,40 @@ class HomeDesktop extends StatelessWidget {
                 children: [
                   const Spacer(),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Text(
-                      'Hemanth S',
+                      'hello'.resolveString(),
                       textAlign: TextAlign.center,
                       style: Theme.of(context)
                           .primaryTextTheme
-                          .headline1
+                          .headline4
                           ?.copyWith(
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w400,
                           ),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      'Flutter & Android Developer from Bangalore, India',
+                      'welcome_name'.resolveString(),
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context)
+                          .primaryTextTheme
+                          .headline1
+                          ?.copyWith(
+                            fontWeight: FontWeight.w700,
+                          ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'description'.resolveString(),
                       textAlign: TextAlign.center,
                       style: Theme.of(context)
                           .primaryTextTheme
                           .headline5
-                          ?.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          ?.copyWith(fontWeight: FontWeight.w500),
                     ),
                   ),
                   const SocialIcons(),

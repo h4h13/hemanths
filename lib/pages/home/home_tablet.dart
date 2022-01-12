@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../widgets/social_icon.dart';
 
 class HomeTablet extends StatelessWidget {
