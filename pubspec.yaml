@@ -1,5 +1,5 @@
 name: flutter_hemanth_dev
-description: A new Flutter project.
+description: A portfolio website for Hemanth S.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
@@ -18,9 +18,20 @@ dependencies:
   url_strategy: ^0.2.0
 
 dev_dependencies:
+  flutter_app_name: ^0.1.1
+  flutter_launcher_icons: ^0.9.2
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
+
+flutter_app_name:
+  name: "Portfolio - Hemanth S"
+
+flutter_icons:
+  android: "ic_launcher"
+  ios: false
+  image_path: "assets/images/app_logo.png"
+
 flutter:
   uses-material-design: true
   assets:

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="dev.hemanths.website">
    <application
-        android:label="flutter_hemanth_dev"
+        android:label="Portfolio - Hemanth S"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

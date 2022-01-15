@@ -66,7 +66,7 @@ class HomeDesktop extends StatelessWidget {
                           ?.copyWith(fontWeight: FontWeight.w500),
                     ),
                   ),
-                  const SocialIcons(),
+                  const SocialIcons(alignment: MainAxisAlignment.center),
                   const Spacer(),
                 ],
               ),

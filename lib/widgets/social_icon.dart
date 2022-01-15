@@ -5,14 +5,19 @@ import '../constants.dart';
 import '../main.dart';
 
 class SocialIcons extends StatelessWidget {
-  const SocialIcons({Key? key}) : super(key: key);
+  const SocialIcons({
+    Key? key,
+    required this.alignment,
+  }) : super(key: key);
+
+  final MainAxisAlignment alignment;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 24.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: alignment,
         children: <Widget>[
           SocialIcon(
             data: MdiIcons.github,

@@ -56,7 +56,7 @@ class HomeTablet extends StatelessWidget {
                               ),
                         ),
                       ),
-                      const SocialIcons(),
+                      const SocialIcons(alignment: MainAxisAlignment.center),
                       const Spacer(),
                       Padding(
                         padding: const EdgeInsets.all(16.0),

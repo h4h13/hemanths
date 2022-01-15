@@ -73,7 +73,7 @@ class HomeMobileLayout extends StatelessWidget {
                                 ),
                           ),
                         ),
-                        const SocialIcons(),
+                        const SocialIcons(alignment: MainAxisAlignment.start),
                         const Spacer(),
                         Padding(
                           padding: const EdgeInsets.all(16.0),
