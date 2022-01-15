@@ -12,7 +12,7 @@ class SocialIcons extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 24.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           SocialIcon(
             data: MdiIcons.github,

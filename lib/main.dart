@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Hemanth S',
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.system,
       theme: whiteTheme,
       darkTheme: darkTheme,
       home: const HomePage(),

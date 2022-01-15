@@ -36,16 +36,25 @@ final darkTheme = ThemeData(
   fontFamily: "Product Sans",
   brightness: Brightness.dark,
   colorScheme: ColorScheme.dark(
-    primary: Colors.deepPurple.shade200,
-    secondary: Colors.deepPurpleAccent.shade100,
+    primary: Colors.orange.shade200,
+    secondary: Colors.orange.shade100,
     onSecondary: Colors.black,
+  ),
+  appBarTheme: const AppBarTheme(
+    backgroundColor: Colors.transparent,
+    elevation: 0,
   ),
 );
 final whiteTheme = ThemeData(
   fontFamily: "Product Sans",
   colorScheme: ColorScheme.light(
-    primary: Colors.purple.shade400,
-    secondary: Colors.purple.shade200,
+    primary: Colors.deepOrange.shade400,
+    secondary: Colors.deepOrange.shade200,
+  ),
+  appBarTheme: AppBarTheme(
+    backgroundColor: Colors.transparent,
+    iconTheme: IconThemeData(color: Colors.grey.shade900),
+    elevation: 0,
   ),
 );
 
