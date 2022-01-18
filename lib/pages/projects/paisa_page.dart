@@ -33,7 +33,8 @@ class PaisaPage extends StatelessWidget {
         ElevatedButton.icon(
           icon: const Icon(Icons.download_rounded),
           onPressed: () {
-            launch('');
+            launch(
+                'https://github.com/h4h13/h4h13.github.io/blob/master/paisa-release/release.md');
           },
           label: Text(
             'download'.resolveString(),
