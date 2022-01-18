@@ -95,6 +95,14 @@ class _TabeItem extends StatefulWidget {
 }
 
 class _TabeItemState extends State<_TabeItem> {
+  Color _getColor() {
+    if (widget.selected) {
+      return Theme.of(context).colorScheme.secondary;
+    } else {
+      return Theme.of(context).colorScheme.onBackground;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -110,9 +118,7 @@ class _TabeItemState extends State<_TabeItem> {
         child: Text(
           widget.title,
           style: Theme.of(context).primaryTextTheme.headline5?.copyWith(
-                color: widget.selected
-                    ? Theme.of(context).colorScheme.secondary
-                    : Colors.white,
+                color: _getColor(),
               ),
         ),
       ),

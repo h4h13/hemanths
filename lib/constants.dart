@@ -1,4 +1,8 @@
-import 'package:flutter/material.dart';
+extension StringResolve on String {
+  String resolveString() {
+    return _mapStrings[this] as String;
+  }
+}
 
 const telegramUrl = "https://telegram.me/h4h13";
 const email = "mailto:hemanths@live.com";
@@ -30,39 +34,8 @@ final Map<String, dynamic> _mapStrings = {
   'github': 'Github',
   'scroll': 'Scroll',
   'hello': 'Hello,',
+  'download': 'Download'
 };
-
-final darkTheme = ThemeData(
-  fontFamily: "Product Sans",
-  brightness: Brightness.dark,
-  colorScheme: ColorScheme.dark(
-    primary: Colors.orange.shade200,
-    secondary: Colors.orange.shade100,
-    onSecondary: Colors.black,
-  ),
-  appBarTheme: const AppBarTheme(
-    backgroundColor: Colors.transparent,
-    elevation: 0,
-  ),
-);
-final whiteTheme = ThemeData(
-  fontFamily: "Product Sans",
-  colorScheme: ColorScheme.light(
-    primary: Colors.deepOrange.shade400,
-    secondary: Colors.deepOrange.shade200,
-  ),
-  appBarTheme: AppBarTheme(
-    backgroundColor: Colors.transparent,
-    iconTheme: IconThemeData(color: Colors.grey.shade900),
-    elevation: 0,
-  ),
-);
-
-extension StringResolve on String {
-  String resolveString() {
-    return _mapStrings[this] as String;
-  }
-}
 
 const paisaAppDesctiption = '''Initial release''';
 const retroAppDescription = '''It will become your favorite music player ♥

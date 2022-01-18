@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:url_strategy/url_strategy.dart';
 
-import 'constants.dart';
 import 'pages/home/home_page.dart';
+import 'theme.dart';
 
 void main() {
   setPathUrlStrategy();

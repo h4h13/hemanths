@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_hemanth_dev/constants.dart';
@@ -16,6 +17,7 @@ class ProjectsPage extends StatelessWidget {
     required this.reviews,
     required this.appUrl,
     required this.appLogo,
+    required this.buttons,
   }) : super(key: key);
 
   final String appName;
@@ -24,6 +26,7 @@ class ProjectsPage extends StatelessWidget {
   final double reviews;
   final double downloads;
   final List<String> screenShots;
+  final List<Widget> buttons;
   final String appDescription;
   final String appUrl;
   final String appLogo;
@@ -118,10 +121,10 @@ class ProjectsPage extends StatelessWidget {
                   const SizedBox(
                     height: 16,
                   ),
-                  Row(
+                  Wrap(
                     children: [
                       ElevatedButton.icon(
-                        icon: const Icon(Icons.download_rounded),
+                        icon: const Icon(MdiIcons.googlePlay),
                         onPressed: () {
                           launch(appUrl);
                         },
@@ -132,19 +135,25 @@ class ProjectsPage extends StatelessWidget {
                           primary: Theme.of(context).colorScheme.primary,
                         ),
                       ),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      ...buttons
                     ],
                   ),
                   const SizedBox(
                     height: 16,
                   ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: screenShots
-                          .map((e) => PlayStoreScreenShot(
-                                image: e,
-                              ))
-                          .toList(),
+                  SizedBox(
+                    height: 390,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemCount: screenShots.length,
+                      itemBuilder: (BuildContext context, int index) =>
+                          PlayStoreScreenShot(
+                        image: screenShots[index],
+                      ),
                     ),
                   ),
                   const SizedBox(
@@ -316,13 +325,7 @@ class PlayStoreScreenShot extends StatelessWidget {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       clipBehavior: Clip.antiAlias,
-      child: SizedBox(
-        width: 180,
-        child: AspectRatio(
-          aspectRatio: 10 / 21,
-          child: Image.asset(image),
-        ),
-      ),
+      child: Image.asset(image),
     );
   }
 }

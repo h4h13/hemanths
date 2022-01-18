@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../constants.dart';
 import 'project_page.dart';
@@ -8,12 +9,12 @@ class PaisaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ProjectsPage(
+    return ProjectsPage(
       appName: 'Paisa - Expense Manager',
       developerName: 'Hemanth Savarala',
       rating: 0,
       downloads: 100,
-      screenShots: [
+      screenShots: const [
         'assets/images/paisa_1.png',
         'assets/images/paisa_2.png',
         'assets/images/paisa_3.png',
@@ -21,12 +22,27 @@ class PaisaPage extends StatelessWidget {
         'assets/images/paisa_5.png',
         'assets/images/paisa_6.png',
         'assets/images/paisa_7.png',
+        'assets/images/paisa_8.png',
       ],
       appDescription: paisaAppDesctiption,
       reviews: 0,
       appLogo: 'assets/images/paisa_logo.png',
       appUrl:
           'https://play.google.com/store/apps/details?id=dev.hemanths.paisa',
+      buttons: [
+        ElevatedButton.icon(
+          icon: const Icon(Icons.download_rounded),
+          onPressed: () {
+            launch('');
+          },
+          label: Text(
+            'download'.resolveString(),
+          ),
+          style: ElevatedButton.styleFrom(
+            primary: Theme.of(context).colorScheme.primary,
+          ),
+        ),
+      ],
     );
   }
 }
