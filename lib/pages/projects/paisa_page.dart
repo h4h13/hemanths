@@ -12,7 +12,7 @@ class PaisaPage extends StatelessWidget {
     return ProjectsPage(
       appName: 'Paisa - Expense Manager',
       developerName: 'Hemanth Savarala',
-      rating: 0,
+      rating: 4.6,
       downloads: 100,
       screenShots: const [
         'assets/images/paisa_1.png',
