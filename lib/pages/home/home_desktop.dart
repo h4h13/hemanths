@@ -34,10 +34,7 @@ class HomeDesktop extends StatelessWidget {
                     child: Text(
                       'hello'.resolveString(),
                       textAlign: TextAlign.center,
-                      style: Theme.of(context)
-                          .primaryTextTheme
-                          .headline4
-                          ?.copyWith(
+                      style: Theme.of(context).textTheme.headline4?.copyWith(
                             fontWeight: FontWeight.w400,
                           ),
                     ),
@@ -47,10 +44,7 @@ class HomeDesktop extends StatelessWidget {
                     child: Text(
                       'welcome_name'.resolveString(),
                       textAlign: TextAlign.center,
-                      style: Theme.of(context)
-                          .primaryTextTheme
-                          .headline1
-                          ?.copyWith(
+                      style: Theme.of(context).textTheme.headline1?.copyWith(
                             fontWeight: FontWeight.w700,
                           ),
                     ),
@@ -61,7 +55,7 @@ class HomeDesktop extends StatelessWidget {
                       'description'.resolveString(),
                       textAlign: TextAlign.center,
                       style: Theme.of(context)
-                          .primaryTextTheme
+                          .textTheme
                           .headline5
                           ?.copyWith(fontWeight: FontWeight.w500),
                     ),

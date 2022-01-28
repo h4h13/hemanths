@@ -35,12 +35,10 @@ class HomeTablet extends StatelessWidget {
                         child: Text(
                           'Hemanth S',
                           textAlign: TextAlign.center,
-                          style: Theme.of(context)
-                              .primaryTextTheme
-                              .headline2
-                              ?.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.headline2?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
                         ),
                       ),
                       Padding(
@@ -48,12 +46,10 @@ class HomeTablet extends StatelessWidget {
                         child: Text(
                           'Flutter & Android Developer from Bangalore, India',
                           textAlign: TextAlign.center,
-                          style: Theme.of(context)
-                              .primaryTextTheme
-                              .headline6
-                              ?.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.headline6?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
                         ),
                       ),
                       const SocialIcons(alignment: MainAxisAlignment.center),
@@ -62,12 +58,10 @@ class HomeTablet extends StatelessWidget {
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
                           '© Copyright',
-                          style: Theme.of(context)
-                              .primaryTextTheme
-                              .headline6
-                              ?.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.headline6?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
                         ),
                       ),
                     ],

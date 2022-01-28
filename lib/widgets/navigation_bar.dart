@@ -117,7 +117,7 @@ class _TabeItemState extends State<_TabeItem> {
         ),
         child: Text(
           widget.title,
-          style: Theme.of(context).primaryTextTheme.headline5?.copyWith(
+          style: Theme.of(context).textTheme.headline5?.copyWith(
                 color: _getColor(),
               ),
         ),

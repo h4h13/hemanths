@@ -25,7 +25,7 @@ class PaisaPage extends StatelessWidget {
         'assets/images/paisa_8.png',
       ],
       appDescription: paisaAppDesctiption,
-      reviews: 0,
+      reviews: 3,
       appLogo: 'assets/images/paisa_logo.png',
       appUrl:
           'https://play.google.com/store/apps/details?id=dev.hemanths.paisa',

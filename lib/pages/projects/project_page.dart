@@ -322,10 +322,20 @@ class PlayStoreScreenShot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-      clipBehavior: Clip.antiAlias,
-      child: Image.asset(image),
+    return ScreenTypeLayout(
+      mobile: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+        clipBehavior: Clip.antiAlias,
+        child: Image.asset(image),
+      ),
+      tablet: SizedBox(
+        width: 220,
+        child: Card(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          clipBehavior: Clip.antiAlias,
+          child: Image.asset(image),
+        ),
+      ),
     );
   }
 }

@@ -31,7 +31,7 @@ class InfoCardWidget extends StatelessWidget {
                     ),
                     child: Text(
                       title ?? '',
-                      style: Theme.of(context).primaryTextTheme.headline6,
+                      style: Theme.of(context).textTheme.headline6,
                     ),
                   )
                 : const SizedBox.shrink(),

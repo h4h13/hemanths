@@ -39,12 +39,10 @@ class HomeMobileLayout extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(horizontal: 8.0),
                           child: Text(
                             'hello'.resolveString(),
-                            style: Theme.of(context)
-                                .primaryTextTheme
-                                .headline4
-                                ?.copyWith(
-                                  fontWeight: FontWeight.w400,
-                                ),
+                            style:
+                                Theme.of(context).textTheme.headline4?.copyWith(
+                                      fontWeight: FontWeight.w400,
+                                    ),
                           ),
                         ),
                         Padding(
@@ -52,7 +50,7 @@ class HomeMobileLayout extends StatelessWidget {
                           child: Text(
                             'welcome_name'.resolveString(),
                             style: Theme.of(context)
-                                .primaryTextTheme
+                                .textTheme
                                 .headline2
                                 ?.copyWith(
                                   fontWeight: FontWeight.w700,
@@ -64,13 +62,11 @@ class HomeMobileLayout extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             'description'.resolveString(),
-                            style: Theme.of(context)
-                                .primaryTextTheme
-                                .headline6
-                                ?.copyWith(
-                                  fontWeight: FontWeight.w400,
-                                  color: Colors.white.withOpacity(0.78),
-                                ),
+                            style:
+                                Theme.of(context).textTheme.headline6?.copyWith(
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.white.withOpacity(0.78),
+                                    ),
                           ),
                         ),
                         const SocialIcons(alignment: MainAxisAlignment.start),
@@ -86,7 +82,7 @@ class HomeMobileLayout extends StatelessWidget {
                                 child: Text(
                                   'projects'.resolveString(),
                                   style: Theme.of(context)
-                                      .primaryTextTheme
+                                      .textTheme
                                       .headline6
                                       ?.copyWith(
                                         fontWeight: FontWeight.w400,
