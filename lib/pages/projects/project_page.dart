@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:url_launcher/url_launcher.dart';
-import '../../constants.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+
+import '../../constants.dart';
 
 class ProjectsPage extends StatelessWidget {
   const ProjectsPage({
