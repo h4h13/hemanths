@@ -3,7 +3,8 @@ import 'package:intl/intl.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter_hemanth_dev/constants.dart';
+import '../../constants.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class ProjectsPage extends StatelessWidget {
   const ProjectsPage({
@@ -22,16 +23,16 @@ class ProjectsPage extends StatelessWidget {
 
   final String appName;
   final String developerName;
-  final double rating;
-  final double reviews;
-  final double downloads;
+  final num rating;
+  final num reviews;
+  final num downloads;
   final List<String> screenShots;
   final List<Widget> buttons;
   final String appDescription;
   final String appUrl;
   final String appLogo;
 
-  String convertNumber(double number) {
+  String convertNumber(num number) {
     return NumberFormat.compact().format(number);
   }
 
@@ -56,12 +57,12 @@ class ProjectsPage extends StatelessWidget {
                     children: [
                       Card(
                         clipBehavior: Clip.antiAlias,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16),
+                        ),
                         child: Image.asset(
                           appLogo,
                           height: 72,
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
                         ),
                       ),
                       Expanded(
@@ -125,9 +126,7 @@ class ProjectsPage extends StatelessWidget {
                     children: [
                       ElevatedButton.icon(
                         icon: const Icon(MdiIcons.googlePlay),
-                        onPressed: () {
-                          launch(appUrl);
-                        },
+                        onPressed: () => launchUrlString(appUrl),
                         label: Text(
                           'google_play'.resolveString(),
                         ),
@@ -230,9 +229,7 @@ class ProjectsPage extends StatelessWidget {
                   ),
                   ElevatedButton.icon(
                     icon: const Icon(Icons.download_rounded),
-                    onPressed: () {
-                      launch(appUrl);
-                    },
+                    onPressed: () => launchUrlString(appUrl),
                     label: Text(
                       'google_play'.resolveString(),
                     ),

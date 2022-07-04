@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hemanth_dev/pages/projects/paisa_page.dart';
 
 import '../../constants.dart';
 import '../../widgets/social_icon.dart';
+import '../projects/paisa_page.dart';
 import '../projects/retro_music_page.dart';
 
 class HomeMobileLayout extends StatelessWidget {
@@ -42,11 +42,12 @@ class HomeMobileLayout extends StatelessWidget {
                             style:
                                 Theme.of(context).textTheme.headline4?.copyWith(
                                       fontWeight: FontWeight.w400,
+                                      color: Colors.white,
                                     ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
                           child: Text(
                             'welcome_name'.resolveString(),
                             style: Theme.of(context)
@@ -63,7 +64,7 @@ class HomeMobileLayout extends StatelessWidget {
                           child: Text(
                             'description'.resolveString(),
                             style:
-                                Theme.of(context).textTheme.headline6?.copyWith(
+                                Theme.of(context).textTheme.subtitle1?.copyWith(
                                       fontWeight: FontWeight.w400,
                                       color: Colors.white.withOpacity(0.78),
                                     ),

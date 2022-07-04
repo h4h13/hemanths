@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
+
 import '../home/home_desktop.dart';
 import '../home/home_mobile.dart';
 import '../home/home_tablet.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({
