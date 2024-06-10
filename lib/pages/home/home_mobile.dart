@@ -40,7 +40,7 @@ class HomeMobileLayout extends StatelessWidget {
                           child: Text(
                             'hello'.resolveString(),
                             style:
-                                Theme.of(context).textTheme.headline4?.copyWith(
+                                Theme.of(context).textTheme.headlineMedium?.copyWith(
                                       fontWeight: FontWeight.w400,
                                       color: Colors.white,
                                     ),
@@ -52,7 +52,7 @@ class HomeMobileLayout extends StatelessWidget {
                             'welcome_name'.resolveString(),
                             style: Theme.of(context)
                                 .textTheme
-                                .headline2
+                                .displayMedium
                                 ?.copyWith(
                                   fontWeight: FontWeight.w700,
                                   color: Theme.of(context).colorScheme.primary,
@@ -64,7 +64,7 @@ class HomeMobileLayout extends StatelessWidget {
                           child: Text(
                             'description'.resolveString(),
                             style:
-                                Theme.of(context).textTheme.subtitle1?.copyWith(
+                                Theme.of(context).textTheme.titleMedium?.copyWith(
                                       fontWeight: FontWeight.w400,
                                       color: Colors.white.withOpacity(0.78),
                                     ),
@@ -84,7 +84,7 @@ class HomeMobileLayout extends StatelessWidget {
                                   'projects'.resolveString(),
                                   style: Theme.of(context)
                                       .textTheme
-                                      .headline6
+                                      .titleLarge
                                       ?.copyWith(
                                         fontWeight: FontWeight.w400,
                                         color: Colors.white.withOpacity(0.78),

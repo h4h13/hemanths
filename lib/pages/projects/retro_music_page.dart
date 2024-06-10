@@ -31,7 +31,7 @@ class RetroMusicPage extends StatelessWidget {
             'download'.resolveString(),
           ),
           style: ElevatedButton.styleFrom(
-            primary: Theme.of(context).colorScheme.primary,
+            backgroundColor: Theme.of(context).colorScheme.primary,
           ),
         ),
       ],
