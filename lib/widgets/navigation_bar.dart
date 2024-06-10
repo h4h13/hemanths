@@ -99,7 +99,7 @@ class _TabeItemState extends State<_TabeItem> {
     if (widget.selected) {
       return Theme.of(context).colorScheme.secondary;
     } else {
-      return Theme.of(context).colorScheme.onBackground;
+      return Theme.of(context).colorScheme.onSurface;
     }
   }
 
@@ -117,7 +117,7 @@ class _TabeItemState extends State<_TabeItem> {
         ),
         child: Text(
           widget.title,
-          style: Theme.of(context).textTheme.headline5?.copyWith(
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                 color: _getColor(),
               ),
         ),
