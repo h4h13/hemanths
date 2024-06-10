@@ -39,11 +39,11 @@ final retroMusicProject = Project(
     'assets/images/retro_6.png',
     'assets/images/retro_7.png',
   ],
-  rating: 4.4,
+  rating: 4.1,
   downloads: 2800000,
-  reviews: 64000,
+  reviews: 76300,
   appLogo: 'assets/images/retro_logo.png',
-  appUrl: 'https://github.com/RetroMusicPlayer/RetroMusicPlayer',
+  appUrl: 'https://github.com/h4h13/RetroMusicPlayer',
   playStoreUrl:
       'https://play.google.com/store/apps/details?id=code.name.monkey.retromusic',
 );
@@ -63,9 +63,9 @@ final paisaProject = Project(
     'assets/images/paisa_8.png',
   ],
   rating: 4.6,
-  downloads: 500,
+  downloads: 10000,
   reviews: 3,
-  appLogo: 'assets/images/paisa_logo.png',
+  appLogo: 'assets/images/paisa_logo.webp',
   appUrl: 'https://github.com/h4h13/paisa',
   playStoreUrl:
       'https://play.google.com/store/apps/details?id=dev.hemanths.paisa',
