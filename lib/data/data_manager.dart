@@ -43,7 +43,7 @@ final retroMusicProject = Project(
   downloads: 2800000,
   reviews: 76300,
   appLogo: 'assets/images/retro_logo.png',
-  appUrl: 'https://github.com/h4h13/RetroMusicPlayer',
+  appUrl: 'https://github.com/RetroMusicPlayer/RetroMusicPlayer',
   playStoreUrl:
       'https://play.google.com/store/apps/details?id=code.name.monkey.retromusic',
 );
