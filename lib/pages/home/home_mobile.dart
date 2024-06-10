@@ -39,11 +39,13 @@ class HomeMobileLayout extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(horizontal: 8.0),
                           child: Text(
                             'hello'.resolveString(),
-                            style:
-                                Theme.of(context).textTheme.headline4?.copyWith(
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.white,
-                                    ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineMedium
+                                ?.copyWith(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.white,
+                                ),
                           ),
                         ),
                         Padding(
@@ -52,7 +54,7 @@ class HomeMobileLayout extends StatelessWidget {
                             'welcome_name'.resolveString(),
                             style: Theme.of(context)
                                 .textTheme
-                                .headline2
+                                .displayMedium
                                 ?.copyWith(
                                   fontWeight: FontWeight.w700,
                                   color: Theme.of(context).colorScheme.primary,
@@ -63,11 +65,13 @@ class HomeMobileLayout extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             'description'.resolveString(),
-                            style:
-                                Theme.of(context).textTheme.subtitle1?.copyWith(
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.white.withOpacity(0.78),
-                                    ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium
+                                ?.copyWith(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.white.withOpacity(0.78),
+                                ),
                           ),
                         ),
                         const SocialIcons(alignment: MainAxisAlignment.start),
@@ -84,7 +88,7 @@ class HomeMobileLayout extends StatelessWidget {
                                   'projects'.resolveString(),
                                   style: Theme.of(context)
                                       .textTheme
-                                      .headline6
+                                      .titleLarge
                                       ?.copyWith(
                                         fontWeight: FontWeight.w400,
                                         color: Colors.white.withOpacity(0.78),
@@ -100,7 +104,19 @@ class HomeMobileLayout extends StatelessWidget {
                                     ),
                                   );
                                 },
+                                style: ElevatedButton.styleFrom(
+                                  foregroundColor:
+                                      Theme.of(context).colorScheme.onPrimary,
+                                  backgroundColor:
+                                      Theme.of(context).colorScheme.primary,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                ),
                                 child: const Text('Retro Music'),
+                              ),
+                              const SizedBox(
+                                height: 10,
                               ),
                               ElevatedButton(
                                 onPressed: () {
@@ -111,6 +127,15 @@ class HomeMobileLayout extends StatelessWidget {
                                     ),
                                   );
                                 },
+                                style: ElevatedButton.styleFrom(
+                                  foregroundColor:
+                                      Theme.of(context).colorScheme.onPrimary,
+                                  backgroundColor:
+                                      Theme.of(context).colorScheme.primary,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(4),
+                                  ),
+                                ),
                                 child: const Text('Paisa - Expense Manager'),
                               ),
                             ],

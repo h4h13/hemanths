@@ -36,7 +36,7 @@ class HomeTablet extends StatelessWidget {
                           'Hemanth S',
                           textAlign: TextAlign.center,
                           style:
-                              Theme.of(context).textTheme.headline2?.copyWith(
+                              Theme.of(context).textTheme.displayMedium?.copyWith(
                                     fontWeight: FontWeight.bold,
                                   ),
                         ),
@@ -47,7 +47,7 @@ class HomeTablet extends StatelessWidget {
                           'Flutter & Android Developer from Bangalore, India',
                           textAlign: TextAlign.center,
                           style:
-                              Theme.of(context).textTheme.headline6?.copyWith(
+                              Theme.of(context).textTheme.titleLarge?.copyWith(
                                     fontWeight: FontWeight.bold,
                                   ),
                         ),
@@ -59,7 +59,7 @@ class HomeTablet extends StatelessWidget {
                         child: Text(
                           '© Copyright',
                           style:
-                              Theme.of(context).textTheme.headline6?.copyWith(
+                              Theme.of(context).textTheme.titleLarge?.copyWith(
                                     fontWeight: FontWeight.bold,
                                   ),
                         ),
