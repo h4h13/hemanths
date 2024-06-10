@@ -31,6 +31,7 @@ class PaisaPage extends StatelessWidget {
           ),
           style: ElevatedButton.styleFrom(
             backgroundColor: Theme.of(context).colorScheme.primary,
+            foregroundColor: Theme.of(context).colorScheme.onPrimary,
           ),
         ),
       ],

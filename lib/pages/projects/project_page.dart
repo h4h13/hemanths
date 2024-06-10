@@ -131,7 +131,10 @@ class ProjectsPage extends StatelessWidget {
                           'google_play'.resolveString(),
                         ),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Theme.of(context).colorScheme.primary,
+                          backgroundColor:
+                              Theme.of(context).colorScheme.primary,
+                          foregroundColor:
+                              Theme.of(context).colorScheme.onPrimary,
                         ),
                       ),
                       const SizedBox(
@@ -169,8 +172,10 @@ class ProjectsPage extends StatelessWidget {
                         ),
                         child: Text(
                           'About this app ',
-                          style:
-                              Theme.of(context).textTheme.headlineSmall?.copyWith(),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall
+                              ?.copyWith(),
                         ),
                       ),
                       const Icon(Icons.arrow_forward_outlined)
@@ -235,6 +240,7 @@ class ProjectsPage extends StatelessWidget {
                     ),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Theme.of(context).colorScheme.primary,
+                      foregroundColor: Theme.of(context).colorScheme.onPrimary,
                     ),
                   ),
                   const SizedBox(
@@ -264,8 +270,10 @@ class ProjectsPage extends StatelessWidget {
                         ),
                         child: Text(
                           'About this app ',
-                          style:
-                              Theme.of(context).textTheme.headlineSmall?.copyWith(),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall
+                              ?.copyWith(),
                         ),
                       ),
                       const Icon(Icons.arrow_forward_outlined)
