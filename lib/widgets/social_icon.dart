@@ -58,12 +58,15 @@ class SocialIcon extends StatelessWidget {
       padding: const EdgeInsets.symmetric(
         horizontal: 8,
       ),
-      child: GestureDetector(
-        onTap: onPressed,
-        child: Icon(
-          data,
-          size: iconSize,
-          color: color,
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: GestureDetector(
+          onTap: onPressed,
+          child: Icon(
+            data,
+            size: iconSize,
+            color: color,
+          ),
         ),
       ),
     );

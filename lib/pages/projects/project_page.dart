@@ -75,7 +75,7 @@ class ProjectsPage extends StatelessWidget {
                                 appName,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .headline5
+                                    .headlineSmall
                                     ?.copyWith(),
                               ),
                               const SizedBox(
@@ -85,7 +85,7 @@ class ProjectsPage extends StatelessWidget {
                                 developerName,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .subtitle1
+                                    .titleMedium
                                     ?.copyWith(
                                       color: Theme.of(context)
                                           .colorScheme
@@ -131,7 +131,10 @@ class ProjectsPage extends StatelessWidget {
                           'google_play'.resolveString(),
                         ),
                         style: ElevatedButton.styleFrom(
-                          primary: Theme.of(context).colorScheme.primary,
+                          backgroundColor:
+                              Theme.of(context).colorScheme.primary,
+                          foregroundColor:
+                              Theme.of(context).colorScheme.onPrimary,
                         ),
                       ),
                       const SizedBox(
@@ -169,8 +172,10 @@ class ProjectsPage extends StatelessWidget {
                         ),
                         child: Text(
                           'About this app ',
-                          style:
-                              Theme.of(context).textTheme.headline5?.copyWith(),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall
+                              ?.copyWith(),
                         ),
                       ),
                       const Icon(Icons.arrow_forward_outlined)
@@ -178,7 +183,7 @@ class ProjectsPage extends StatelessWidget {
                   ),
                   Text(
                     appDescription,
-                    style: Theme.of(context).textTheme.subtitle1?.copyWith(),
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(),
                   )
                 ],
               ),
@@ -198,7 +203,7 @@ class ProjectsPage extends StatelessWidget {
                 children: [
                   Text(
                     appName,
-                    style: Theme.of(context).textTheme.headline3?.copyWith(
+                    style: Theme.of(context).textTheme.displaySmall?.copyWith(
                           fontWeight: FontWeight.w600,
                         ),
                   ),
@@ -207,7 +212,7 @@ class ProjectsPage extends StatelessWidget {
                   ),
                   Text(
                     developerName,
-                    style: Theme.of(context).textTheme.headline6?.copyWith(
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
                           color: Theme.of(context).colorScheme.secondary,
                         ),
                   ),
@@ -234,7 +239,8 @@ class ProjectsPage extends StatelessWidget {
                       'google_play'.resolveString(),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: Theme.of(context).colorScheme.primary,
+                      backgroundColor: Theme.of(context).colorScheme.primary,
+                      foregroundColor: Theme.of(context).colorScheme.onPrimary,
                     ),
                   ),
                   const SizedBox(
@@ -264,8 +270,10 @@ class ProjectsPage extends StatelessWidget {
                         ),
                         child: Text(
                           'About this app ',
-                          style:
-                              Theme.of(context).textTheme.headline5?.copyWith(),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall
+                              ?.copyWith(),
                         ),
                       ),
                       const Icon(Icons.arrow_forward_outlined)
@@ -273,7 +281,7 @@ class ProjectsPage extends StatelessWidget {
                   ),
                   Text(
                     appDescription,
-                    style: Theme.of(context).textTheme.subtitle1?.copyWith(),
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(),
                   )
                 ],
               ),

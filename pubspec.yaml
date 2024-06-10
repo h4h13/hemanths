@@ -11,7 +11,7 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.0.1
   go_router: ^4.1.0
-  google_fonts: ^3.0.1
+  google_fonts: ^6.2.1
   intl: ^0.17.0
   material_design_icons_flutter: ^5.0.6295
   provider: ^6.0.1
