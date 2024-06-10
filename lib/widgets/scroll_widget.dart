@@ -19,7 +19,7 @@ class ScrollWidget extends StatelessWidget {
             'scroll'.resolveString(),
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: Theme.of(context).textTheme.subtitle1?.fontSize,
+              fontSize: Theme.of(context).textTheme.titleMedium?.fontSize,
               fontWeight: FontWeight.bold,
             ),
           ),
