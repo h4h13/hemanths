@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hemanth_dev/app_routes.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:url_strategy/url_strategy.dart';
 
-import 'pages/home/home_page.dart';
-import 'theme.dart';
+import 'package:flutter_hemanth_dev/theme.dart';
 
 void main() {
   setPathUrlStrategy();
@@ -11,22 +11,22 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Hemanth S',
       themeMode: ThemeMode.dark,
       theme: whiteTheme,
       darkTheme: darkTheme,
-      home: const HomePage(),
+      routerConfig: goRouter,
     );
   }
 }
 
-openUrl(String urlString) async {
+void openUrl(String urlString) async {
   if (await canLaunchUrlString(urlString)) {
     await launchUrlString(urlString);
   } else {

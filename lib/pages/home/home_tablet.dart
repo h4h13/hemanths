@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../widgets/social_icon.dart';
+import 'package:flutter_hemanth_dev/widgets/social_icon.dart';
 
 class HomeTablet extends StatelessWidget {
-  const HomeTablet({Key? key}) : super(key: key);
+  const HomeTablet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +35,12 @@ class HomeTablet extends StatelessWidget {
                         child: Text(
                           'Hemanth S',
                           textAlign: TextAlign.center,
-                          style:
-                              Theme.of(context).textTheme.headline2?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                          style: Theme.of(context)
+                              .textTheme
+                              .displayMedium
+                              ?.copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),
                         ),
                       ),
                       Padding(
@@ -47,7 +49,7 @@ class HomeTablet extends StatelessWidget {
                           'Flutter & Android Developer from Bangalore, India',
                           textAlign: TextAlign.center,
                           style:
-                              Theme.of(context).textTheme.headline6?.copyWith(
+                              Theme.of(context).textTheme.titleLarge?.copyWith(
                                     fontWeight: FontWeight.bold,
                                   ),
                         ),
@@ -59,7 +61,7 @@ class HomeTablet extends StatelessWidget {
                         child: Text(
                           '© Copyright',
                           style:
-                              Theme.of(context).textTheme.headline6?.copyWith(
+                              Theme.of(context).textTheme.titleLarge?.copyWith(
                                     fontWeight: FontWeight.bold,
                                   ),
                         ),

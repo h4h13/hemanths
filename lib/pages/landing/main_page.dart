@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-import '../home/home_desktop.dart';
-import '../home/home_mobile.dart';
-import '../home/home_tablet.dart';
+import 'package:flutter_hemanth_dev/pages/home/home_desktop.dart';
+import 'package:flutter_hemanth_dev/pages/home/home_mobile.dart';
+import 'package:flutter_hemanth_dev/pages/home/home_tablet.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<MainPage> createState() => _MainPageState();
@@ -17,10 +17,10 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    return ScreenTypeLayout(
-      mobile: const HomeMobileLayout(),
-      tablet: const HomeTablet(),
-      desktop: const HomeDesktop(),
+    return ScreenTypeLayout.builder(
+      mobile: (p0) => const HomeMobileLayout(),
+      tablet: (p0) => const HomeTablet(),
+      desktop: (p0) => const HomeDesktop(),
     );
   }
 }

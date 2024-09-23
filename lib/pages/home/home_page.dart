@@ -1,24 +1,18 @@
 import 'package:flutter/material.dart';
 
-import '../../app_routes.dart';
-import '../../widgets/navigation_bar.dart';
+import 'package:flutter_hemanth_dev/widgets/navigation_bar.dart';
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Stack(
         children: [
-          Navigator(
-            key: navigatorKey,
-            initialRoute: home,
-            onGenerateRoute: generateRoute,
-          ),
-          const Align(
+          Align(
             alignment: Alignment.topCenter,
             child: TabBarNavigation(),
           ),

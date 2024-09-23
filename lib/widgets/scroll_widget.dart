@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../constants.dart';
+import 'package:flutter_hemanth_dev/constants.dart';
 
 class ScrollWidget extends StatelessWidget {
   const ScrollWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class ScrollWidget extends StatelessWidget {
             'scroll'.resolveString(),
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: Theme.of(context).textTheme.subtitle1?.fontSize,
+              fontSize: Theme.of(context).textTheme.titleMedium?.fontSize,
               fontWeight: FontWeight.bold,
             ),
           ),

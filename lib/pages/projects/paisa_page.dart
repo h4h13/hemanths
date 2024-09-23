@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-import '../../constants.dart';
-import '../../data/data_manager.dart';
-import 'project_page.dart';
+import 'package:flutter_hemanth_dev/constants.dart';
+import 'package:flutter_hemanth_dev/data/data_manager.dart';
+import 'package:flutter_hemanth_dev/pages/projects/project_page.dart';
 
 class PaisaPage extends StatelessWidget {
-  const PaisaPage({Key? key}) : super(key: key);
+  const PaisaPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class PaisaPage extends StatelessWidget {
             'download'.resolveString(),
           ),
           style: ElevatedButton.styleFrom(
-            primary: Theme.of(context).colorScheme.primary,
+            backgroundColor: Theme.of(context).colorScheme.primary,
           ),
         ),
       ],

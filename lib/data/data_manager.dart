@@ -1,4 +1,4 @@
-import '../constants.dart';
+import 'package:flutter_hemanth_dev/constants.dart';
 
 class Project {
   final String name;

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-import '../constants.dart';
-import '../main.dart';
+import 'package:flutter_hemanth_dev/constants.dart';
+import 'package:flutter_hemanth_dev/main.dart';
 
 class SocialIcons extends StatelessWidget {
   const SocialIcons({
-    Key? key,
+    super.key,
     required this.alignment,
-  }) : super(key: key);
+  });
 
   final MainAxisAlignment alignment;
 
@@ -46,11 +46,11 @@ class SocialIcon extends StatelessWidget {
   final double iconSize = 28;
   final Color color;
   const SocialIcon({
-    Key? key,
+    super.key,
     required this.data,
     required this.onPressed,
     required this.color,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

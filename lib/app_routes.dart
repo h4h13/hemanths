@@ -1,30 +1,93 @@
 import 'package:flutter/material.dart';
 
-import 'pages/landing/main_page.dart';
-import 'pages/projects/paisa_page.dart';
-import 'pages/projects/retro_music_page.dart';
+import 'package:flutter_hemanth_dev/pages/landing/main_page.dart';
+import 'package:flutter_hemanth_dev/pages/projects/paisa_page.dart';
+import 'package:flutter_hemanth_dev/pages/projects/retro_music_page.dart';
+import 'package:flutter_hemanth_dev/pages/terms/terms.dart';
+import 'package:go_router/go_router.dart';
 
-const home = '/home';
-const paiseApp = '/paisa';
-const retroMucicApp = '/retro-music';
+part 'app_routes.g.dart';
 
-Route generateRoute(RouteSettings settings) {
-  late Widget page = const MainPage();
+final GoRouter goRouter = GoRouter(
+  routes: $appRoutes,
+  initialLocation: '/app',
+  debugLogDiagnostics: true,
+  errorBuilder: (c, s) => ErrorRoute(error: s.error!).build(c, s),
+);
 
-  switch (settings.name) {
-    case home:
-      page = const MainPage();
-      break;
-    case retroMucicApp:
-      page = const RetroMusicPage();
-      break;
-    case paiseApp:
-      page = const PaisaPage();
-      break;
+class ErrorRoute extends GoRouteData {
+  ErrorRoute({required this.error});
+
+  final Exception error;
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return Center(
+      child: Text(state.error.toString()),
+    );
   }
-
-  return MaterialPageRoute(
-    builder: (context) => page,
-    settings: settings,
-  );
 }
+
+@TypedGoRoute<LoginPageData>(
+  path: '/login',
+)
+class LoginPageData extends GoRouteData {
+  const LoginPageData();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const Center(child: CircularProgressIndicator());
+  }
+}
+
+@TypedGoRoute<AppPageData>(path: '/home')
+class AppPageData extends GoRouteData {
+  const AppPageData(this.appId);
+
+  final App appId;
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    if (appId == App.paisa) {
+      return const PaisaPage();
+    } else {
+      return const RetroMusicPage();
+    }
+  }
+}
+
+@TypedGoRoute<HomePageData>(path: '/app')
+class HomePageData extends GoRouteData {
+  const HomePageData();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const MainPage();
+  }
+}
+
+@TypedGoRoute<TermsPageData>(path: '/terms')
+class TermsPageData extends GoRouteData {
+  const TermsPageData();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const TermsPage(
+      htmlUrl: 'assets/html/terms_and_conditions.html',
+    );
+  }
+}
+
+@TypedGoRoute<PolicyPageData>(path: '/policy')
+class PolicyPageData extends GoRouteData {
+  const PolicyPageData();
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) {
+    return const TermsPage(
+      htmlUrl: 'assets/html/privacy.html',
+    );
+  }
+}
+
+enum App { paisa, retro }

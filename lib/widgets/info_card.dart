@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class InfoCardWidget extends StatelessWidget {
   const InfoCardWidget({
-    Key? key,
+    super.key,
     this.title,
     this.bodyWidget,
     required this.actionsButtons,
-  }) : super(key: key);
+  });
 
   final String? title;
   final Widget? bodyWidget;
@@ -18,7 +18,6 @@ class InfoCardWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Card(
         child: Column(
-          mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             title != null
@@ -31,7 +30,7 @@ class InfoCardWidget extends StatelessWidget {
                     ),
                     child: Text(
                       title ?? '',
-                      style: Theme.of(context).textTheme.headline6,
+                      style: Theme.of(context).textTheme.titleLarge,
                     ),
                   )
                 : const SizedBox.shrink(),

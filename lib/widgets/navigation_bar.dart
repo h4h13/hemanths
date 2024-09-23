@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-import '../app_routes.dart';
-import '../pages/home/home_page.dart';
+import 'package:flutter_hemanth_dev/app_routes.dart';
+import 'package:flutter_hemanth_dev/pages/home/home_page.dart';
 
 class TabBarNavigation extends StatefulWidget {
   const TabBarNavigation({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<TabBarNavigation> createState() => _TabBarNavigationState();
@@ -15,19 +16,6 @@ class TabBarNavigation extends StatefulWidget {
 
 class _TabBarNavigationState extends State<TabBarNavigation> {
   int index = 0;
-  void onHighlight(String route) {
-    switch (route) {
-      case home:
-        changeHighlight(0);
-        break;
-      case retroMucicApp:
-        changeHighlight(1);
-        break;
-      case paiseApp:
-        changeHighlight(2);
-        break;
-    }
-  }
 
   void changeHighlight(int newIndex) {
     setState(() {
@@ -37,9 +25,9 @@ class _TabBarNavigationState extends State<TabBarNavigation> {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenTypeLayout(
-      mobile: const SizedBox.shrink(),
-      tablet: SafeArea(
+    return ScreenTypeLayout.builder(
+      mobile: (p0) => const SizedBox.shrink(),
+      tablet: (p0) => SafeArea(
         child: FractionallySizedBox(
           widthFactor: 0.9,
           child: Padding(
@@ -49,23 +37,48 @@ class _TabBarNavigationState extends State<TabBarNavigation> {
             child: Row(
               children: [
                 const Spacer(),
-                _TabeItem(
+                _TabItem(
                   title: 'Home',
-                  appRoute: home,
-                  selected: index == 0,
-                  onPress: onHighlight,
+                  selected: GoRouterState.of(context).uri.path.contains('app'),
+                  onPress: () {
+                    const HomePageData().go(context);
+                  },
                 ),
-                _TabeItem(
+                _TabItem(
                   title: 'Retro Music',
-                  appRoute: retroMucicApp,
-                  selected: index == 1,
-                  onPress: onHighlight,
+                  selected: GoRouterState.of(context)
+                      .uri
+                      .queryParameters
+                      .containsValue('retro'),
+                  onPress: () {
+                    const AppPageData(App.retro).go(context);
+                  },
                 ),
-                _TabeItem(
+                _TabItem(
                   title: 'Paisa',
-                  appRoute: paiseApp,
-                  selected: index == 2,
-                  onPress: onHighlight,
+                  selected: GoRouterState.of(context)
+                      .uri
+                      .queryParameters
+                      .containsValue('paisa'),
+                  onPress: () {
+                    const AppPageData(App.paisa).go(context);
+                  },
+                ),
+                _TabItem(
+                  title: 'Terms & Conditions',
+                  selected:
+                      GoRouterState.of(context).uri.path.contains('terms'),
+                  onPress: () {
+                    const TermsPageData().go(context);
+                  },
+                ),
+                _TabItem(
+                  title: 'Privacy Policy',
+                  selected:
+                      GoRouterState.of(context).uri.path.contains('policy'),
+                  onPress: () {
+                    const PolicyPageData().go(context);
+                  },
                 ),
               ],
             ),
@@ -76,30 +89,28 @@ class _TabBarNavigationState extends State<TabBarNavigation> {
   }
 }
 
-class _TabeItem extends StatefulWidget {
-  const _TabeItem({
-    Key? key,
+class _TabItem extends StatefulWidget {
+  const _TabItem({
     required this.title,
-    required this.appRoute,
     required this.selected,
     required this.onPress,
-  }) : super(key: key);
+  });
 
   final bool selected;
   final String title;
-  final String appRoute;
-  final Function(String appRoute) onPress;
+
+  final VoidCallback onPress;
 
   @override
-  State<_TabeItem> createState() => _TabeItemState();
+  State<_TabItem> createState() => _TabItemState();
 }
 
-class _TabeItemState extends State<_TabeItem> {
+class _TabItemState extends State<_TabItem> {
   Color _getColor() {
     if (widget.selected) {
       return Theme.of(context).colorScheme.secondary;
     } else {
-      return Theme.of(context).colorScheme.onBackground;
+      return Theme.of(context).colorScheme.onSurface;
     }
   }
 
@@ -107,8 +118,7 @@ class _TabeItemState extends State<_TabeItem> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        widget.onPress(widget.appRoute);
-        navigatorKey.currentState!.pushNamed(widget.appRoute);
+        widget.onPress();
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(
@@ -117,7 +127,7 @@ class _TabeItemState extends State<_TabeItem> {
         ),
         child: Text(
           widget.title,
-          style: Theme.of(context).textTheme.headline5?.copyWith(
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                 color: _getColor(),
               ),
         ),
