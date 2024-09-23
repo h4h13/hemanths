@@ -10,7 +10,7 @@ part 'app_routes.g.dart';
 
 final GoRouter goRouter = GoRouter(
   routes: $appRoutes,
-  initialLocation: '/app',
+  initialLocation: '/home',
   debugLogDiagnostics: true,
   errorBuilder: (c, s) => ErrorRoute(error: s.error!).build(c, s),
 );
@@ -40,7 +40,6 @@ class LoginPageData extends GoRouteData {
   }
 }
 
-@TypedGoRoute<AppPageData>(path: '/home')
 class AppPageData extends GoRouteData {
   const AppPageData(this.appId);
 
@@ -56,7 +55,14 @@ class AppPageData extends GoRouteData {
   }
 }
 
-@TypedGoRoute<HomePageData>(path: '/app')
+@TypedGoRoute<HomePageData>(
+  path: '/home',
+  routes: [
+    TypedGoRoute<TermsPageData>(path: 'terms'),
+    TypedGoRoute<PolicyPageData>(path: 'policy'),
+    TypedGoRoute<AppPageData>(path: 'app')
+  ],
+)
 class HomePageData extends GoRouteData {
   const HomePageData();
 
@@ -66,7 +72,6 @@ class HomePageData extends GoRouteData {
   }
 }
 
-@TypedGoRoute<TermsPageData>(path: '/terms')
 class TermsPageData extends GoRouteData {
   const TermsPageData();
 
@@ -78,7 +83,6 @@ class TermsPageData extends GoRouteData {
   }
 }
 
-@TypedGoRoute<PolicyPageData>(path: '/policy')
 class PolicyPageData extends GoRouteData {
   const PolicyPageData();
 

@@ -65,7 +65,7 @@ final paisaProject = Project(
   rating: 4.6,
   downloads: 500,
   reviews: 3,
-  appLogo: 'assets/images/paisa_logo.png',
+  appLogo: 'assets/images/ios_app_icon.png',
   appUrl: 'https://github.com/h4h13/paisa',
   playStoreUrl:
       'https://play.google.com/store/apps/details?id=dev.hemanths.paisa',

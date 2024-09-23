@@ -39,7 +39,8 @@ class _TabBarNavigationState extends State<TabBarNavigation> {
                 const Spacer(),
                 _TabItem(
                   title: 'Home',
-                  selected: GoRouterState.of(context).uri.path.contains('app'),
+                  selected:
+                      GoRouterState.of(context).uri.pathSegments.last == 'home',
                   onPress: () {
                     const HomePageData().go(context);
                   },
@@ -69,7 +70,7 @@ class _TabBarNavigationState extends State<TabBarNavigation> {
                   selected:
                       GoRouterState.of(context).uri.path.contains('terms'),
                   onPress: () {
-                    const TermsPageData().go(context);
+                    const TermsPageData().pushReplacement(context);
                   },
                 ),
                 _TabItem(
@@ -77,7 +78,7 @@ class _TabBarNavigationState extends State<TabBarNavigation> {
                   selected:
                       GoRouterState.of(context).uri.path.contains('policy'),
                   onPress: () {
-                    const PolicyPageData().go(context);
+                    const PolicyPageData().pushReplacement(context);
                   },
                 ),
               ],
@@ -117,6 +118,7 @@ class _TabItemState extends State<_TabItem> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      borderRadius: BorderRadius.circular(16),
       onTap: () {
         widget.onPress();
       },

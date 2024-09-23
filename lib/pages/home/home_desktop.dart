@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hemanth_dev/app_routes.dart';
 
 import 'package:flutter_hemanth_dev/constants.dart';
-import 'package:flutter_hemanth_dev/pages/terms/terms.dart';
 import 'package:flutter_hemanth_dev/widgets/navigation_bar.dart';
 import 'package:flutter_hemanth_dev/widgets/social_icon.dart';
 
@@ -75,8 +74,6 @@ class HomeDesktop extends StatelessWidget {
                         ),
                         const SocialIcons(alignment: MainAxisAlignment.center),
                         const Spacer(),
-                        const TermsAndConditions(),
-                        const SizedBox(height: 16.0),
                       ],
                     ),
                   ),
@@ -103,7 +100,7 @@ class TermsAndConditions extends StatelessWidget {
             text: 'Terms & Conditions',
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                const TermsPageData().go(context);
+                const TermsPageData().push(context);
               },
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: Theme.of(context).colorScheme.secondary,
@@ -114,7 +111,7 @@ class TermsAndConditions extends StatelessWidget {
             text: 'Privacy Policy',
             recognizer: TapGestureRecognizer()
               ..onTap = () {
-                const PolicyPageData().go(context);
+                const PolicyPageData().push(context);
               },
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: Theme.of(context).colorScheme.secondary,
