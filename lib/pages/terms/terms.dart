@@ -31,11 +31,19 @@ class TermsPage extends StatelessWidget {
                 Expanded(
                   child: InAppWebView(
                     initialSettings: InAppWebViewSettings(
+                      useShouldOverrideUrlLoading: true,
+                      mediaPlaybackRequiresUserGesture: false,
                       underPageBackgroundColor:
                           Theme.of(context).colorScheme.surface,
                       transparentBackground: true,
                     ),
                     initialFile: htmlUrl,
+                    onReceivedError: (controller, request, error) {
+                      print('Error loading $request: $error');
+                    },
+                    onConsoleMessage: (controller, consoleMessage) {
+                      print('Console message: ${consoleMessage.message}');
+                    },
                   ),
                 ),
               ],

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hemanth_dev/app_routes.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import 'package:url_strategy/url_strategy.dart';
 
 import 'package:flutter_hemanth_dev/theme.dart';
 
+InAppLocalhostServer localhostServer = InAppLocalhostServer();
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   setPathUrlStrategy();
   runApp(const MyApp());
 }

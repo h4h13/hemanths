@@ -29,6 +29,12 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png" />
 
+    <!-- Add this line for Content Security Policy -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https:; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:;"
+    />
+
     <title>hemanths</title>
     <link rel="manifest" href="manifest.json" />
     <head>
